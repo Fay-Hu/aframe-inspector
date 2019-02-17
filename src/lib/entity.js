@@ -3,6 +3,7 @@ var Events = require('../lib/Events.js');
 
 import { equal } from '../lib/utils.js';
 
+import entityNames from '../components/components/local/entities';
 /**
  * Update a component.
  *
@@ -557,10 +558,12 @@ export function printEntity(entity, onDoubleClick) {
     type = 'mixin';
   }
 
+  let entityNameLabel = entity.tagName.toLowerCase();
+  let entityNameCN = entityNameLabel in entityNames ? entityNames[entityNameLabel] : entityNameLabel;
   return (
     <span className="entityPrint" onDoubleClick={onDoubleClick}>
       <span className="entityTagName">
-        {'<' + entity.tagName.toLowerCase()}
+        {'<' + entityNameCN}
       </span>
       {entityName && (
         <span className="entityName" data-entity-name-type={type}>

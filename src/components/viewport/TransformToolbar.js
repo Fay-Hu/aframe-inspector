@@ -3,9 +3,9 @@ var Events = require('../../lib/Events.js');
 var classNames = require('classnames');
 
 var TransformButtons = [
-  { value: 'translate', icon: 'fa-arrows-alt' },
-  { value: 'rotate', icon: 'fa-repeat' },
-  { value: 'scale', icon: 'fa-expand' }
+  { value: 'translate', icon: 'fa-arrows', label: '移动'},
+  { value: 'rotate', icon: 'fa-refresh', label: '旋转'},
+  { value: 'scale', icon: 'fa-arrows-h', label: '缩放' }
 ];
 
 export default class TransformToolbar extends React.Component {
@@ -56,7 +56,7 @@ export default class TransformToolbar extends React.Component {
 
         return (
           <a
-            title={option.value}
+            title={option.label}
             key={i}
             onClick={this.changeTransformMode.bind(this, option.value)}
             className={classes}
@@ -83,9 +83,9 @@ export default class TransformToolbar extends React.Component {
           />
           <label
             htmlFor="local"
-            title="Toggle between local and world space transforms"
+            title="切换局部和世界空间变换"
           >
-            local
+            局部变换
           </label>
         </span>
       </div>

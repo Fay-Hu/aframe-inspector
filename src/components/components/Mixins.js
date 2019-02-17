@@ -72,7 +72,7 @@ export default class Mixin extends React.Component {
     return (
       <div className="mixinOptions">
         <div className="propertyRow">
-          <span className="text">mixins</span>
+          <span className="text">混合</span>
           <span className="mixinValue">
             <Select
               id="mixinSelect"
@@ -80,8 +80,8 @@ export default class Mixin extends React.Component {
               ref="select"
               options={this.getMixinOptions()}
               isMulti={true}
-              placeholder="Add mixin..."
-              noResultsText="No mixins found"
+              placeholder="添加混合"
+              noResultsText="暂无数据"
               onChange={this.updateMixins.bind(this)}
               simpleValue
               value={this.state.mixins}

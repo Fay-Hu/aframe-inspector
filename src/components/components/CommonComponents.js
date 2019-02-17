@@ -55,7 +55,10 @@ export default class CommonComponents extends React.Component {
   renderCommonAttributes() {
     const entity = this.props.entity;
     const components = entity ? entity.components : {};
-    return ['position', 'rotation', 'scale', 'visible'].map(componentName => {
+
+    const componentNames = ['位置', '旋转', '缩放', '可见']
+
+    return ['position', 'rotation', 'scale', 'visible'].map((componentName, index) => {
       const schema = AFRAME.components[componentName].schema;
       var data = entity.object3D[componentName];
       if (componentName === 'rotation') {
@@ -65,11 +68,12 @@ export default class CommonComponents extends React.Component {
           z: THREE.Math.radToDeg(entity.object3D.rotation.z)
         };
       }
+      var componentNameCN = componentNames[index]
       return (
         <PropertyRow
           onChange={updateEntity}
           key={componentName}
-          name={componentName}
+          name={componentNameCN}
           showHelp={true}
           schema={schema}
           data={data}

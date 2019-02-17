@@ -7,6 +7,8 @@ import Clipboard from 'clipboard';
 import { getComponentClipboardRepresentation } from '../../lib/entity';
 import Events from '../../lib/Events';
 
+import componentNames from './local/components';
+
 const isSingleProperty = AFRAME.schema.isSingleProperty;
 
 /**
@@ -134,24 +136,26 @@ export default class Component extends React.Component {
       componentName = componentName.substr(0, componentName.indexOf('__'));
     }
 
+    let componentNameLabel = subComponentName || componentName;
+    let componentNameLabelCN = componentNameLabel in componentNames ? componentNames[componentNameLabel] : componentNameLabel;
     return (
       <Collapsible collapsed={this.props.isCollapsed}>
         <div className="componentHeader collapsible-header">
           <span
             className="componentTitle"
-            title={subComponentName || componentName}>
-            <span>{subComponentName || componentName}</span>
+            title={componentNameLabelCN}>
+            <span>{componentNameLabelCN}</span>
           </span>
           <div className="componentHeaderActions">
             <a
-              title="Copy to clipboard"
+              title="复制到剪贴板"
               data-action="copy-component-to-clipboard"
               data-component={subComponentName || componentName}
               className="button fa fa-clipboard"
               href="#"
             />
             <a
-              title="Remove component"
+              title="移除组件"
               className="button fa fa-trash-o"
               onClick={this.removeComponent}
             />

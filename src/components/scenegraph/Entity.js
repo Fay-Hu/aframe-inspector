@@ -45,7 +45,7 @@ export default class Entity extends React.Component {
       tagName === 'a-scene' ? null : (
         <a
           onClick={() => cloneEntity(entity)}
-          title="Clone entity"
+          title="复制"
           className="button fa fa-clone"
         />
       );
@@ -56,7 +56,7 @@ export default class Entity extends React.Component {
             event.stopPropagation();
             removeEntity(entity);
           }}
-          title="Remove entity"
+          title="移除"
           className="button fa fa-trash"
         />
       );
@@ -84,7 +84,7 @@ export default class Entity extends React.Component {
         : entity.getAttribute('visible');
     const visibilityButton = (
       <i
-        title="Toggle entity visibility"
+        title="切换可见性"
         className={'fa ' + (visible ? 'fa-eye' : 'fa-eye-slash')}
         onClick={this.toggleVisibility}
       />

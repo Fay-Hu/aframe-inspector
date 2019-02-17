@@ -79,7 +79,7 @@ export default class AddComponent extends React.Component {
 
     return (
       <div id="addComponentContainer">
-        <p id="addComponentHeader">COMPONENTS</p>
+        <p id="addComponentHeader">组件</p>
         <Select
           id="addComponent"
           className="addComponent"
@@ -88,8 +88,8 @@ export default class AddComponent extends React.Component {
           options={this.options}
           simpleValue
           clearable={true}
-          placeholder="Add component..."
-          noResultsText="No components found"
+          placeholder="添加组件"
+          noResultsText="没有可用组件"
           onChange={this.addComponent}
           optionRenderer={this.renderOption}
           searchable={true}

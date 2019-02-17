@@ -15,6 +15,9 @@ import Vec3Widget from '../widgets/Vec3Widget';
 import Vec2Widget from '../widgets/Vec2Widget';
 import { updateEntity } from '../../lib/entity';
 
+// 属性名对应
+import properties from './local/properties'
+
 export default class PropertyRow extends React.Component {
   static propTypes = {
     componentname: PropTypes.string.isRequired,
@@ -128,10 +131,12 @@ export default class PropertyRow extends React.Component {
           (props.entity.getDOMAttribute(props.componentname) || {})
     });
 
+    let propertyName = props.name in properties ? properties[props.name] : props.name;
+
     return (
       <div className={className}>
         <label htmlFor={this.id} className="text" title={title}>
-          {props.name}
+          {propertyName}
         </label>
         {this.getWidget(props.schema.type)}
       </div>

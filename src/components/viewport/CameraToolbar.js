@@ -4,13 +4,13 @@ var classNames = require('classnames');
 import Select from 'react-select';
 
 const options = [
-  { value: 'perspective', event: 'cameraperspectivetoggle', payload: null, label: 'Perspective' },
-  { value: 'ortholeft', event: 'cameraorthographictoggle', payload: 'left', label: 'Left View' },
-  { value: 'orthoright', event: 'cameraorthographictoggle', payload: 'right', label: 'Right View' },
-  { value: 'orthotop', event: 'cameraorthographictoggle', payload: 'top', label: 'Top View' },
-  { value: 'orthobottom', event: 'cameraorthographictoggle', payload: 'bottom', label: 'Bottom View' },
-  { value: 'orthoback', event: 'cameraorthographictoggle', payload: 'back', label: 'Back View' },
-  { value: 'orthofront', event: 'cameraorthographictoggle', payload: 'front', label: 'Front View' },
+  { value: 'perspective', event: 'cameraperspectivetoggle', payload: null, label: '透视图' },
+  { value: 'ortholeft', event: 'cameraorthographictoggle', payload: 'left', label: '左视图' },
+  { value: 'orthoright', event: 'cameraorthographictoggle', payload: 'right', label: '右视图' },
+  { value: 'orthotop', event: 'cameraorthographictoggle', payload: 'top', label: '顶视图' },
+  { value: 'orthobottom', event: 'cameraorthographictoggle', payload: 'bottom', label: '底视图' },
+  { value: 'orthoback', event: 'cameraorthographictoggle', payload: 'back', label: '后视图' },
+  { value: 'orthofront', event: 'cameraorthographictoggle', payload: 'front', label: '前视图' }
 ];
 
 function getOption (value) {

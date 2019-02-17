@@ -97,25 +97,25 @@ export default class Toolbar extends React.Component {
       fa: true,
       'fa-save': true
     });
-    const watcherTitle = 'Write changes with aframe-watcher.';
+    const watcherTitle = '保存修改到aframe-watcher';
 
     return (
       <div id="toolbar">
         <div className="toolbarActions">
           <a
             className="button fa fa-plus"
-            title="Add a new entity"
+            title="添加新的实体"
             onClick={this.addEntity}
           />
           <a
             id="playPauseScene"
             className={'button fa ' + (this.state.isPlaying ? 'fa-pause' : 'fa-play')}
-            title={this.state.isPlaying ? 'Pause scene' : 'Resume scene'}
+            title={this.state.isPlaying ? '暂停场景' : '运行场景'}
             onClick={this.toggleScenePlaying}>
           </a>
           <a
             className="gltfIcon"
-            title="Export to GLTF"
+            title="导出为GLTF"
             onClick={this.exportSceneToGLTF}>
             <img src={process.env.NODE_ENV === 'production' ? 'https://aframe.io/aframe-inspector/assets/gltf.svg' : '../assets/gltf.svg'} />
           </a>

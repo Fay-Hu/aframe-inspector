@@ -285,7 +285,7 @@ export default class SceneGraph extends React.Component {
           <div className="search">
             <input
               id="filter"
-              placeholder="Search..."
+              placeholder="搜索..."
               onChange={this.onChangeFilter}
               onKeyUp={this.onFilterKeyUp}
             />
